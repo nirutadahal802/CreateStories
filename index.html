@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add Story</title>
+
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+		* {
+			padding: 0px;
+			margin: 0px;
+			box-sizing: border-box;
+			font-family: poppins;
+		}
+
+		body {
+			background-color: rgb(255, 255, 255);
+		}
+
+		#view {
+			height: 100vh;
+			width: 27vw;
+			background: rgba(255, 251, 251, 0.85);
+			position: relative;
+		}
+
+		.fb {
+			display: flex;
+			border: 1px solid #EBF5FF;
+			box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+		}
+
+		.fb img {
+			height: 40px;
+			width: 40px;
+			margin-left: 15px;
+			object-fit: cover;
+		}
+
+		.fb .close {
+			border-radius: 60px;
+		}
+
+		.fb .facebook {
+			border-radius: 60px;
+		}
+
+		.your {
+			margin-top: 13px;
+			margin-left: 15px;
+			font-size: 18px;
+		}
+
+		.your img {
+			height: 30px;
+			width: 30px;
+			float: right;
+			margin-right: 20px;
+			background: rgba(0, 0, 0, 0.10);
+			border-radius: 50px;
+		}
+
+		.text_place {
+			margin: 0px 15px;
+			margin-right: 5px;
+		}
+
+		form {
+			position: absolute;
+		}
+		form #press{
+			text-align: left;
+			font-size: 15px;
+		}
+		.preview {
+			position: absolute;
+			left: 30%;
+			top: 5%;
+			height: 90vh;
+			width: 65%;
+			border-radius: 8px;
+			background: rgba(255, 251, 251, 0.85);
+			border: 1px solid #EBF5FF;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		}
+
+		.preview span {
+			font-size: 20px;
+			margin-left: 10px;
+		}
+
+		.preview .typetext {
+			height: 82vh;
+			width: 96%;
+			margin: 1% 2%;
+			background: rgba(1, 5, 6, 0.87);
+			border-radius: 8px;
+		}
+
+		.preview .typetext #side {
+			position: absolute;
+			left: 30%;
+			top: 8%;
+			height: 75vh;
+			width: 25vw;
+			margin: 5px 5px;
+			padding: 10px 10px;
+			font-size: 27px;
+			border: 1px solid black;
+			background: white;
+		}
+
+		#side {
+			background-color: white;
+			border-radius: 5PX;
+		}
+
+		#side p {
+			text-align: center;
+			margin-top: 60%;
+		}
+
+		#pp {
+			display: flex;
+		}
+
+		span {
+			margin-right: 20px;
+			font-size: 23px;
+			margin-top: 15px;
+		}
+
+		#pp span img {
+			height: 60px;
+			width: 60px;
+			border-radius: 50%;
+			object-fit: cover;
+			margin-left: 15px;
+		}
+
+		hr {
+			margin-top: 20px;
+		}
+
+		.text_place {
+			margin-top: 15px;
+		}
+
+		select {
+			position: absolute;
+			width: 100%;
+			padding: 10px;
+			font-size: 18px;
+		}
+
+		.btn1 {
+			height: 90px;
+			width: 100%;
+			position: absolute;
+			border: 1px solid black;
+		}
+
+		button {
+			height: 5vh;
+			width: 5vh;
+			align-items: center;
+			border: 1px solid black;
+			margin: 5px 5px;
+			border-radius: 50%;
+		}
+
+		button:nth-child(1) {
+			background: rgb(194, 172, 172);
+		}
+
+		button:nth-child(2) {
+			background: rgb(170, 218, 170);
+		}
+
+		button:nth-child(3) {
+			background: rgb(72, 72, 243);
+		}
+
+		button:nth-child(4) {
+			background: rgb(231, 75, 231);
+		}
+
+		button:nth-child(5) {
+			background: rgb(219, 176, 81);
+		}
+
+		button:nth-child(6) {
+			background: rgb(216, 128, 87);
+		}
+
+		button:nth-child(7) {
+			background: rgb(107, 98, 107);
+		}
+
+		button:nth-child(8) {
+			background: rgb(106, 165, 212);
+		}
+
+		button:nth-child(9) {
+			background: rgb(197, 46, 46);
+		}
+
+		button:nth-child(10) {
+			background: rgb(111, 196, 55);
+		}
+	</style>
+
+
+</head>
+
+<body>
+
+
+
+	<div id="view">
+		<div class="fb">
+			<span><img src="close.png" class="close"><img src="fblogo.png" class="facebook"></span>
+		</div>
+		<div class="your">
+			<h1>Your Story<img src="setting.png"></h1>
+		</div>
+		<div id="pp">
+			<span><img src="niru.jpg"></span><span><b>Neeruta Dahal</b></span>
+		</div>
+		<hr>
+		<div class="text_place">
+			<form>
+				<textarea rows="10" cols="42" onkeypress="types()" id="press">
+			</textarea>
+				<br>
+
+				<select onchange="font()" id="changing">
+					<option value="cursive">Cursive</option>
+					<option value="monospace">Monospace</option>
+					<option value="Sans-serif">Sans-serif</option>
+					<option value="Fantasy">Fantasy</option>
+					<option value="Serif">Serif</option>
+				</select><br><br><br>
+				<div class="btn1">
+					<button class="color-btn" id="button1" change="grey"></button>
+					<button class="color-btn" id="button2" change="red"></button>
+					<button class="color-btn" id="button3" change="blue"></button>
+					<button class="color-btn" id="button4" change="purple"></button>
+					<button class="color-btn" id="button5" change="brown"></button>
+					<button class="color-btn" id="button6" change="pink"></button>
+					<button class="color-btn" id="button7" change="green"></button>
+					<button class="color-btn" id="button8" change="orange"></button>
+					<button class="color-btn" id="button9" change="violet"></button>
+					<button class="color-btn" id="button10" change="maroon"></button>
+
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="preview">
+		<span>Preview</span>
+		<div class="typetext">
+			<div id="side">
+				<p id="text"> Start Typing</p>
+
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
+<script type="text/javascript">
+	function types() {
+		var x = document.getElementById("press").value;
+
+		document.querySelector("#text").innerHTML = x;
+	}
+
+	var side = document.getElementById("side");
+	var text = document.getElementById("text");
+
+
+	var buttons = document.querySelectorAll('.color-btn');
+
+	buttons.forEach(btn => {
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			let color = btn.getAttribute('change');
+			side.style.backgroundColor = color;
+
+		})
+	})
+	function font() {
+		var changing = document.getElementById("changing").value;
+		text.style.fontFamily = changing;
+	}
+</script>
